@@ -8,7 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Controls.Ribbon;
 using System.Windows.Shapes;
 
-namespace ExtendCSharpWPF
+namespace ExtendCSharpWPF.Ribbon
 {
     public class RibbonBehavior
     {
@@ -31,17 +31,17 @@ namespace ExtendCSharpWPF
 
         public static void OnHideRibbonTabsChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d == null || d.GetType() != typeof(Ribbon)) return;
+            if (d == null || d.GetType() != typeof(System.Windows.Controls.Ribbon.Ribbon)) return;
 
-            (d as Ribbon).Loaded += ctrl_Loaded;
+            (d as System.Windows.Controls.Ribbon.Ribbon).Loaded += ctrl_Loaded;
 
         }
 
         static void ctrl_Loaded(object sender, RoutedEventArgs e)
         {
-            if (sender == null || sender.GetType() != typeof(Ribbon)) return;
+            if (sender == null || sender.GetType() != typeof(System.Windows.Controls.Ribbon.Ribbon)) return;
 
-            Ribbon _ribbon = (Ribbon)sender;
+            System.Windows.Controls.Ribbon.Ribbon _ribbon = (System.Windows.Controls.Ribbon.Ribbon)sender;
 
             var tabGrid = _ribbon.GetDescendants<Grid>().FirstOrDefault();
             tabGrid.RowDefinitions[1].Height = new GridLength(0, System.Windows.GridUnitType.Pixel);
