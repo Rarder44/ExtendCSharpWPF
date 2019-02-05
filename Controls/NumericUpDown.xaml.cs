@@ -33,15 +33,16 @@ namespace ExtendCSharpWPF.Controls
         }
         private void userControl_Loaded(object sender, RoutedEventArgs e)
         {
-            _numValue = Default;
+            if(_numValue==null)
+                _numValue = Default;
             txtNum.Text = _numValue.ToString();
         }
-        private int _numValue;
+        private int? _numValue = null;
         private bool DisableTextChanged = false;
 
         public int NumValue
         {
-            get { return _numValue; }
+            get { return _numValue!=null?_numValue.Value:0; }
             set
             {
                 _numValue = value;
