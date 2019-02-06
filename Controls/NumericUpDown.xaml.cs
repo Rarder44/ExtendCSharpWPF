@@ -28,8 +28,9 @@ namespace ExtendCSharpWPF.Controls
 
         public NumericUpDown()
         {
+            DisableTextChanged = true;
             InitializeComponent();
-            
+            DisableTextChanged = false;
         }
         private void userControl_Loaded(object sender, RoutedEventArgs e)
         {

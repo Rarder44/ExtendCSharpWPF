@@ -11,10 +11,10 @@
         <converters:PercentageConverter x:Key="PercentageConverter"/>
     </UserControl.Resources>
     <Grid x:Name="grid"  Height="{Binding ActualHeight, ElementName=userControl, Mode=OneWay}" Background="White">
-        <TextBox x:Name="txtNum" x:FieldModifier="private" Text="0" TextChanged="txtNum_TextChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,20,0"  />
+        <TextBox x:Name="txtNum" x:FieldModifier="private" Text="0" TextChanged="txtNum_TextChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,20,0" TabIndex="1"  />
         <StackPanel x:Name="stackPanelButton" Height="{Binding ActualHeight, ElementName=grid, Mode=OneWay}" Width="20" HorizontalAlignment="Right">
-            <Button x:Name="cmdUp" x:FieldModifier="private"  Content="˄" Click="cmdUp_Click" Width="{Binding ActualWidth, ElementName=stackPanelButton, Mode=OneWay}" Height="{Binding ActualHeight, ConverterParameter='0,5', Converter={StaticResource PercentageConverter}, ElementName=grid, Mode=OneWay}" FontSize="6" />
-            <Button x:Name="cmdDown" x:FieldModifier="private"  Content="˅" Click="cmdDown_Click" Width="{Binding ActualWidth, ElementName=stackPanelButton, Mode=OneWay}" Height="{Binding ActualHeight, ElementName=cmdUp, Mode=OneWay}" FontSize="6"/>
+            <Button x:Name="cmdUp" x:FieldModifier="private"  Content="˄" Click="cmdUp_Click" Width="{Binding ActualWidth, ElementName=stackPanelButton, Mode=OneWay}" Height="{Binding ActualHeight, ConverterParameter='0,5', Converter={StaticResource PercentageConverter}, ElementName=grid, Mode=OneWay}" FontSize="6" IsTabStop="False" />
+            <Button x:Name="cmdDown" x:FieldModifier="private"  Content="˅" Click="cmdDown_Click" Width="{Binding ActualWidth, ElementName=stackPanelButton, Mode=OneWay}" Height="{Binding ActualHeight, ElementName=cmdUp, Mode=OneWay}" FontSize="6" IsTabStop="False"/>
         </StackPanel>
     </Grid>
 </UserControl>
