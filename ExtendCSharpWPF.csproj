@@ -52,6 +52,9 @@
   <ItemGroup>
     <Compile Include="Classes\ComboBoxItemValue.cs" />
     <Compile Include="Classes\LinePlus.cs" />
+    <Compile Include="Controls\HueColorPicker.xaml.cs">
+      <DependentUpon>HueColorPicker.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\NumericUpDown.xaml.cs">
       <DependentUpon>NumericUpDown.xaml</DependentUpon>
     </Compile>
@@ -82,6 +85,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\HueColorPicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\NumericUpDown.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -92,6 +99,9 @@
       <Project>{9199318b-0f63-4faf-a0f1-823ef0072eea}</Project>
       <Name>ExtendCSharp</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource\HueRing.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
